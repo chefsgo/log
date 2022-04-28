@@ -18,16 +18,14 @@ func (this *Module) Configure(value Any) {
 		return
 	}
 
-	var global Map
-	if cfg, ok := value.(Map); ok {
-		global = cfg
-	} else {
-		return
-	}
-
 	var config Map
-	if vvv, ok := global["log"].(Map); ok {
-		config = vvv
+	if global, ok := value.(Map); ok {
+		if vvv, ok := global["log"].(Map); ok {
+			config = vvv
+		}
+	}
+	if config == nil {
+		return
 	}
 
 	//设置驱动
