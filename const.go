@@ -3,7 +3,7 @@ package log
 import "errors"
 
 const (
-	NAME = "log"
+	NAME = "LOG"
 )
 
 var (

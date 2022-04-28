@@ -1,7 +1,6 @@
 package log
 
 import (
-	"fmt"
 	"strings"
 
 	. "github.com/chefsgo/base"
@@ -113,8 +112,6 @@ func (this *Module) Launch() {
 	if this.launched {
 		return
 	}
-
-	fmt.Println("log Launch")
 
 	this.launched = true
 }
