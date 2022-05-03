@@ -4,6 +4,7 @@ import "errors"
 
 const (
 	NAME = "LOG"
+	//
 )
 
 var (
