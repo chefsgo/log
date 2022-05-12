@@ -98,6 +98,31 @@ type (
 	}
 )
 
+//Driver 为log模块注册驱动
+func (this *Module) Driver(name string, driver Driver, override bool) {
+	this.mutex.Lock()
+	defer this.mutex.Unlock()
+
+	if driver == nil {
+		panic("Invalid log driver: " + name)
+	}
+
+	if override {
+		this.drivers[name] = driver
+	} else {
+		if this.drivers[name] == nil {
+			this.drivers[name] = driver
+		}
+	}
+}
+
+func (this *Module) Config(name string, config Config, override bool) {
+	this.mutex.Lock()
+	defer this.mutex.Unlock()
+
+	this.config = config
+}
+
 //Log format
 func (log *Log) Format() string {
 	message := log.format
