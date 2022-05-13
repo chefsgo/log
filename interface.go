@@ -14,17 +14,10 @@ func (this *Module) Register(name string, value Any, override bool) {
 		this.Config(name, obj, override)
 	}
 }
-func (this *Module) Configure(value Any) {
-	if cfg, ok := value.(Config); ok {
-		this.config = cfg
-		return
-	}
-
+func (this *Module) Configure(global Map) {
 	var config Map
-	if global, ok := value.(Map); ok {
-		if vvv, ok := global["log"].(Map); ok {
-			config = vvv
-		}
+	if vvv, ok := global["log"].(Map); ok {
+		config = vvv
 	}
 	if config == nil {
 		return
