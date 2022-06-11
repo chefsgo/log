@@ -41,6 +41,11 @@ func (this *Module) output(args ...Any) {
 	log.Println(body)
 }
 
+//输出控制台信息
+func (this *Module) Console(args ...Any) {
+	this.output(args...)
+}
+
 //调试
 func (this *Module) Debug(args ...Any) {
 	if this.connect == nil {

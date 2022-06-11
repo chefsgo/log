@@ -129,7 +129,7 @@ func (log *Log) Format() string {
 
 	// message := strings.Replace(format, "%flag%", log.Flag, -1)
 	message = strings.Replace(message, "%nano%", strconv.FormatInt(log.Time, 10), -1)
-	message = strings.Replace(message, "%time%", time.Unix(0, log.Time).Format("2006-01-02 15:04:05.000"), -1)
+	message = strings.Replace(message, "%time%", time.Unix(0, log.Time).Format("2006/01/02 15:04:05.000"), -1)
 	message = strings.Replace(message, "%level%", levels[log.Level], -1)
 	// message = strings.Replace(message, "%file%", log.File, -1)
 	// message = strings.Replace(message, "%line%", strconv.Itoa(log.Line), -1)

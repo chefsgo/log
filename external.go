@@ -9,6 +9,10 @@ func Levels() map[Level]string {
 	return levels
 }
 
+func Console(args ...Any) {
+	module.Console(args...)
+}
+
 // //语法糖
 func Debug(args ...Any) {
 	module.Debug(args...)
