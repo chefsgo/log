@@ -7,6 +7,7 @@ const (
 )
 
 var (
+	//
 	errInvalidLogConnection = errors.New("Invalid log connection.")
 )
 
@@ -23,7 +24,7 @@ const (
 
 var (
 	levels = map[Level]string{
-		LevelFatal:   "ERROR",
+		LevelFatal:   "FATAL",
 		LevelPanic:   "PANIC",
 		LevelWarning: "WARNING",
 		LevelNotice:  "NOTICE",
